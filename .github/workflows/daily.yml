@@ -43,6 +43,7 @@ jobs:
           git add data/candidates.json site/data/latest.json
           if ! git diff --cached --quiet; then
             git commit -m 'chore: daily teacher job discovery [skip ci]'
+            git pull --rebase origin main
             git push
           fi
       - name: Configure GitHub Pages
