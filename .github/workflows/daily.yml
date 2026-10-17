@@ -1,0 +1,68 @@
+name: 每日招聘检索与网站发布
+
+on:
+  schedule:
+    # 北京时间每天 12:20（UTC 04:20）；GitHub 可能延迟执行。
+    - cron: '20 4 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'data/**'
+      - 'scripts/**'
+      - '.github/workflows/daily.yml'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-daily
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Discover public job postings
+        run: python scripts/update_jobs.py
+      - name: Commit search results if changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/candidates.json site/data/latest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: daily teacher job discovery [skip ci]'
+            git push
+          fi
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Publish site
+        id: deployment
+        uses: actions/deploy-pages@v4
