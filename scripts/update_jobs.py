@@ -1,0 +1,260 @@
+#!/usr/bin/env python3
+"""Daily RSS discovery for 2027 mathematics teacher roles in Hefei and Shanghai.
+
+Important: search discovery is NOT eligibility verification. New results always have fit=D.
+Dependencies: Python 3.11+ standard library; no API keys or scraping login sites.
+"""
+from __future__ import annotations
+
+import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timezone, timedelta
+import hashlib
+import html
+import json
+import os
+from pathlib import Path
+import re
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+import xml.etree.ElementTree as ET
+from email.utils import parsedate_to_datetime
+
+ROOT = Path(__file__).resolve().parents[1]
+BASE = ROOT / 'data'
+SITE = ROOT / 'site' / 'data'
+TZO = timezone(timedelta(hours=8))
+SEARCHES = [
+    # Overlapping queries make failures of individual news indexes less harmful.
+    ('上海', '上海 2027届 数学教师 招聘'),
+    ('上海', '上海 2027 数学 教师 校园招聘 初中 高中'),
+    ('上海', '上海 2027 数学 中职 高职 专任教师 招聘'),
+    ('上海', '上海 2027 数学 教师 site:edu.sh.gov.cn'),
+    ('上海', '上海 数学教师 2027 site:gov.cn'),
+    ('上海', '浦东 宝山 闵行 2027 数学 教师招聘'),
+    ('合肥', '合肥 2027届 数学教师 招聘'),
+    ('合肥', '合肥 2027 数学 教师 校园招聘 初中 高中'),
+    ('合肥', '合肥 2027 数学 中职 高职 专任教师 招聘'),
+    ('合肥', '合肥 数学教师 2027 site:gov.cn'),
+    ('合肥', '肥西 肥东 长丰 2027 数学教师 招聘'),
+    ('合肥', '安徽合肥 2027 数学教师 site:edu.cn'),
+]
+CITY_WORDS = {
+ '上海': re.compile('上海|浦东|宝山|闵行|徐汇|静安|黄浦|杨浦|虹口|奉贤|崇明|松江|嘉定|青浦|金山|普陀|长宁'),
+ '合肥': re.compile('合肥|肥西|肥东|长丰|庐江|巢湖|蜀山|瑶海|包河|庐阳|经开区|高新区|新站区'),
+}
+RE_MATH = re.compile('数学|数学学科|计算数学|基础数学|应用数学')
+RE_TEACH = re.compile('教师|老师|教学|任教|教研|师资|教职|招聘|教员|专任')
+RE_SCHOOL = re.compile('学校|中学|中职|技工|职业|高中|初中|专科|高职|高校|学院|教育|师范|教师')
+RE_EARLY = re.compile('2027|应届|毕业生|校园招聘|校招|储备教师|招聘')
+RE_EXCLUDE = re.compile('（讲座）|考研复试|学科竞赛培训|招生简章|中考真题|高考真题|试卷解析|招生录取|数学建模大赛')
+UA = 'Mozilla/5.0 (compatible; 2027MathTeacherJobsBot/1.0; public RSS monitoring)'
+
+
+def save_json(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix('.tmp')
+    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    tmp.replace(path)
+
+
+def read_json(path, fallback):
+    if path.exists():
+        return json.loads(path.read_text(encoding='utf-8'))
+    return fallback
+
+
+def strip_markup(text):
+    text = re.sub(r'<[^>]+>', ' ', text or '')
+    text = html.unescape(text)
+    return ' '.join(text.replace('\xa0',' ').split())[:1800]
+
+
+def parse_date(value):
+    if not value:
+        return ''
+    try:
+        d = parsedate_to_datetime(value)
+        return d.astimezone(TZO).date().isoformat()
+    except Exception:
+        pass
+    m = re.search(r'20\d{2}-\d{2}-\d{2}', value)
+    return m.group() if m else ''
+
+
+def parse_rss(content):
+    root = ET.fromstring(content)
+    for item in root.findall('.//item'):
+        yield {
+            'title': strip_markup(item.findtext('title') or ''),
+            'url': (item.findtext('link') or '').strip(),
+            'summary': strip_markup(item.findtext('description') or ''),
+            'date': parse_date(item.findtext('pubDate') or ''),
+        }
+    # Fallback for Atom feeds.
+    for item in root.findall('.//{http://www.w3.org/2005/Atom}entry'):
+        link = next((x.attrib.get('href','') for x in item.findall('{http://www.w3.org/2005/Atom}link') if x.attrib.get('href')), '')
+        ns = '{http://www.w3.org/2005/Atom}'
+        yield {'title':strip_markup(item.findtext(ns+'title') or ''),
+               'url':link,'summary':strip_markup(item.findtext(ns+'summary') or ''),
+               'date':parse_date(item.findtext(ns+'published') or item.findtext(ns+'updated') or '')}
+
+
+def feed_urls():
+    for city, query in SEARCHES:
+        q = urllib.parse.quote(query)
+        yield city, 'bing', 'https://www.bing.com/search?format=rss&q='+q
+        yield city, 'google_news', 'https://news.google.com/rss/search?q='+q+'&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans'
+
+
+def fetch(url):
+    req = urllib.request.Request(url, headers={'User-Agent':UA, 'Accept':'application/rss+xml, application/xml, text/xml, */*'})
+    with urllib.request.urlopen(req, timeout=14) as response:
+        raw = response.read(3_000_000)
+        if len(raw) == 3_000_000:
+            raise ValueError('feed exceeds size limit')
+        return raw
+
+
+def normalized_url(url):
+    try:
+        p=urllib.parse.urlsplit(url)
+        if p.scheme not in ('http', 'https') or not p.netloc:
+            return ''
+        # Strip only common analytics tags; some job sites need query parameters.
+        q=urllib.parse.parse_qsl(p.query, keep_blank_values=True)
+        q=[(k,v) for k,v in q if not k.lower().startswith('utm_') and k.lower() not in {'fbclid','gclid'}]
+        return urllib.parse.urlunsplit((p.scheme, p.netloc.lower(),p.path.rstrip('/') or '/',urllib.parse.urlencode(q),'')).strip()
+    except ValueError:
+        return ''
+
+
+def candidate(entry, query_city, seen_time):
+    title = entry['title']
+    source = normalized_url(entry['url'])
+    summary = entry['summary']
+    blob = title+' '+summary
+    if not source or len(title)<7 or RE_EXCLUDE.search(title):
+        return None
+    # Do not present very old news as a newly published job announcement.
+    if entry['date']:
+        try:
+            if datetime.fromisoformat(entry['date']).date() < (datetime.now(TZO) - timedelta(days=180)).date():
+                return None
+        except ValueError:
+            pass
+    if not (RE_MATH.search(blob) and RE_TEACH.search(blob) and RE_SCHOOL.search(blob) and RE_EARLY.search(blob)):
+        return None
+    # Require locality text, not merely a query that happened to produce the result.
+    if not CITY_WORDS[query_city].search(blob):
+        return None
+    # Prefer the query region, but explicitly require a location in visible source text.
+    city = query_city
+    if query_city == '合肥' and re.search('上海',title) and not CITY_WORDS['合肥'].search(title):
+        return None
+    if query_city == '上海' and re.search('合肥',title) and not CITY_WORDS['上海'].search(title):
+        return None
+    stage = '待核实'
+    if re.search('高职|职业技术学|高等专科|大专|专任|高校',title):stage='高职/大专'
+    elif re.search('中专|中职|中等职业|技工',title):stage='中职/中专'
+    elif '高中' in title:stage='高中'
+    elif '初中' in title:stage='初中'
+    # Anchor ID to URL (not feed). Multiple matches across engines are one candidate.
+    candidate_id='rss-'+hashlib.sha256(source.encode('utf-8')).hexdigest()[:18]
+    return {
+        'id':candidate_id, 'school':title[:100], 'city':city,
+        'district':'待核实', 'sector':'待核实', 'stage':stage,
+        'role':'数学教师相关招聘线索（岗位待确认）', 'places':'未公布', 'fit':'D',
+        'license':'尚未核验：请确认2027届身份、专业、教资取得时点及学历要求',
+        'note':'自动检索摘要：'+summary[:240] if summary else '每日自动发现的检索结果。请点开原公告核对是否真实在招，以及是否招聘数学教师。',
+        'source':source,'apply':'','email':'','phone':'',
+        'date':entry['date'] or seen_time[:10],'deadline':'',
+        'method':'仅供发现线索，不代表已核实招聘资格或报名入口；请从原公告寻找正式投递渠道',
+        'source_type':'RSS自动检索·未经人工核验',
+        'origin':'rss', 'verified_at':'','first_seen':seen_time,'last_seen':seen_time,
+    }
+
+
+def run(fixture=None):
+    now=datetime.now(timezone.utc).isoformat(timespec='seconds')
+    curated=read_json(BASE/'jobs_curated.json',[])
+    previous=read_json(BASE/'candidates.json',[])
+    old={x['id']:x for x in previous}
+    latest=read_json(SITE/'latest.json',{})
+    prevstatus=latest.get('status',{})
+    issues=[]; results=[]; successes=0; failures=0
+    if fixture:
+        for f in fixture.glob('*.xml'):
+            try:
+                city='上海' if 'shanghai' in f.name.lower() else '合肥'
+                results.extend((city, x) for x in parse_rss(f.read_bytes()))
+                successes+=1
+            except Exception as e:
+                issues.append(f.name+': '+str(e)[:120]); failures+=1
+    else:
+        jobs=list(feed_urls())
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            wait={pool.submit(fetch,url):(city,kind) for city,kind,url in jobs}
+            for fut in as_completed(wait):
+                city,engine=wait[fut]
+                try:
+                    feed=list(parse_rss(fut.result()))
+                    successes+=1
+                    results.extend((city, x) for x in feed)
+                except Exception as e:
+                    failures+=1
+                    if len(issues)<12:
+                        issues.append(f'{engine}/{city}: {type(e).__name__}: {str(e)[:100]}')
+    new=0; matched=0
+    for city, item in results:
+        x=candidate(item,city,now)
+        if not x: continue
+        matched+=1
+        if x['id'] in old:
+            former=old[x['id']]
+            x['first_seen']=former.get('first_seen',now)
+        else:
+            new+=1
+        old[x['id']]=x
+    # Keep historical discoveries for 120 days; lack of search reappearance does NOT prove expiry.
+    age=datetime.now(timezone.utc)-timedelta(days=120)
+    candidates=[]
+    for j in old.values():
+        try:
+            d=datetime.fromisoformat(j.get('last_seen',now).replace('Z','+00:00'))
+            if d<age: continue
+        except ValueError:
+            pass
+        candidates.append(j)
+    candidates.sort(key=lambda j:j.get('first_seen',''),reverse=True)
+    # A cap limits website payload, preserving most recent first.
+    candidates=candidates[:750]
+    status={
+        'last_run':now, 'last_successful_search':now if successes else prevstatus.get('last_successful_search'),
+        'successful_feeds':successes, 'failed_feeds':failures,
+        'new_candidates':new, 'total_candidates':len(candidates),
+        'raw_search_hits':len(results),'relevant_hits':matched,
+        'issues':issues[:12], 'mode':'rss_daily_discovery',
+        'curated_snapshot':'2026-10-17',
+    }
+    # Never replace the known curated jobs with unreviewed search results.
+    # Dedupe candidate from curated URLs, even when title differs.
+    known_links={normalized_url(x.get('source','')) for x in curated}
+    separate=[j for j in candidates if normalized_url(j['source']) not in known_links]
+    merged=curated+separate
+    save_json(BASE/'candidates.json',candidates)
+    save_json(SITE/'latest.json',{'status':status,'jobs':merged})
+    print(f'RSS feeds: {successes} succeeded; {failures} failed; {len(results)} hits, {matched} relevant; new {new}, total {len(separate)} unverified records')
+    if not successes:
+        print('::warning::No RSS feeds succeeded; this is NOT a successful recruitment data refresh.')
+    print('Status:',json.dumps(status,ensure_ascii=False))
+    return status
+
+
+if __name__=='__main__':
+    p=argparse.ArgumentParser()
+    p.add_argument('--fixture-dir',type=Path,default=None,help='For testing only. Parse *.xml files instead of network feeds.')
+    args=p.parse_args()
+    run(args.fixture_dir)
