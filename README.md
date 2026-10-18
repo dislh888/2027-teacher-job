@@ -46,3 +46,16 @@ python3 -m http.server 8000 --directory site
 - 代码**不能自动决定你是否符合招聘资格**，尤其是教资面试/合格证明与“仅通过笔试”的差别。正式投递请以教育局/学校最新公告及联系答复为准。
 - 不要向公开仓库提交个人身份证、简历、邮箱密码、API 密钥等敏感信息。
 - 如果仓库被禁用或 GitHub Actions 的定时工作流被自动禁用，需重新启用，并检查 Actions 历史记录。
+## 2026-10-18 自动发现修复与验证
+
+详见 [检索诊断报告](docs/discovery-audit-2026-10-18.md)。宽查询与原有定向查询并行；未列学科的明确教师招聘公告可作为线索，但只进入 D 类“待核实”，不会自动成为符合资格的岗位。仅凭查询中的城市不予入库。无公告日期时保持空值，不把发现日期当作发布日期。
+
+```bash
+python -m unittest discover -s tests -v
+# 隔离联网验证：先复制人工岗位，避免影响正式数据
+mkdir -p /tmp/teacher-check/data
+cp data/jobs_curated.json /tmp/teacher-check/data/
+python scripts/update_jobs.py --output-root /tmp/teacher-check --audit-dir /tmp/teacher-check/audit
+```
+
+Actions 每次先运行测试，再采集；`discovery-evidence` 附件保留14天，包含原始XML及 `decisions.json`。`latest.json` 同时记录各查询命中数、空源数、首个拒绝原因计数及重复数。RSS成功只代表响应可解析；零线索会单独告警。正好重复人工公告URL的命中不会计为新增。Google News包装链接无法稳定还原为官网链接时，仍可能与其他链接重复；不会用相似学校名称粗暴合并不同公告。
