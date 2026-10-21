@@ -1,5 +1,65 @@
 [
   {
+    "id": "rss-9ecf1c06882d82cb31",
+    "school": "【招聘动态】教师教辅多个岗位！上海科技大学附属学校2026年秋季教师招聘 - 新浪财经",
+    "city": "上海",
+    "district": "待核实",
+    "sector": "待核实",
+    "stage": "待核实",
+    "role": "教师招聘公告（是否含数学岗位待核实）",
+    "places": "未公布",
+    "fit": "D",
+    "license": "尚未核验：请确认2027届身份、专业、教资取得时点及学历要求",
+    "note": "自动检索摘要：【招聘动态】教师教辅多个岗位！上海科技大学附属学校2026年秋季教师招聘 新浪财经",
+    "source": "https://news.google.com/rss/articles/CBMi4gNBVV95cUxPZEduVEFSNnlZWVA4LWZBU2FoRWtHY3FMWndUT3RGNnF0eUJiUkZwMy0xd04ydFdzcTBOenFWTHBJU3l6MzFHVHpDMmFjWUJueDlmNkNmaUFLdjRhX0MxWU1pRW9KU0cwTmtpdi1GRTR1X3MzM01EeVlJSS02Q01lY1FlTG5yeVp0WVlnUWh4MUgxLU50OU1UalVFYWdwRXFTMkpERy1kRjZ5TjdCTHFrTHNJeEFwZlIwX0VjUHZvejZQNGdVd3RnZThURkpBM0lJTHJOejRlUm1ES21ZRHFrMUdNMllydF9vbk1MLV9TeTV1a2oxTld1bUE3SE5BNzVEWG4zTkRMMkNuSkJEMm9wUDhYVzBZN213anJYZ3lCazNBMTBSWm4tQnBmeVdfZWU0RWdHNHhtd0VrRjJIT3VoWVl6QTJDcEVFNEFHeWVCa2I2bVpzMzVEU1FZOU1RSl9jQ1dNODlGQkRMUWkwaGJ2eGVTQlRqSzVnaFBKcVRmNGdtdmpuY3BVaWNUcWdjeXJQbEVJRGdpOTcySEJONHduNkFScUtFaE90Y21EZ2pyX2NDM1J4R05CVTN2ei1acks3d2d4WFBjQl9XRkNPWnhuYzBUeGVhZlcwUTBFVGE1UW1zQQ?oc=5",
+    "apply": "",
+    "email": "",
+    "phone": "",
+    "date": "2026-10-20",
+    "deadline": "",
+    "method": "仅供发现线索，不代表已核实招聘资格或报名入口；请从原公告寻找正式投递渠道",
+    "source_type": "RSS自动检索·未经人工核验",
+    "discovery_evidence": {
+      "math_in_snippet": false,
+      "city_in_snippet": true,
+      "publication_date_known": true
+    },
+    "origin": "rss",
+    "verified_at": "",
+    "first_seen": "2026-10-21T09:25:46+00:00",
+    "last_seen": "2026-10-21T09:25:46+00:00"
+  },
+  {
+    "id": "rss-fc7690143e53d519d1",
+    "school": "华东师范大学第二附属中学临港奉贤分校2027学年教师招聘公告_通知公告 - 上海市奉贤区人民政府",
+    "city": "上海",
+    "district": "待核实",
+    "sector": "待核实",
+    "stage": "待核实",
+    "role": "教师招聘公告（是否含数学岗位待核实）",
+    "places": "未公布",
+    "fit": "D",
+    "license": "尚未核验：请确认2027届身份、专业、教资取得时点及学历要求",
+    "note": "自动检索摘要：华东师范大学第二附属中学临港奉贤分校2027学年教师招聘公告_通知公告 上海市奉贤区人民政府",
+    "source": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1YZTc2SEItb09nWlExY1NqclMyNWthY1dJNFh3bjJxNnd3N2xsSVZvVkEyTEdZVU4zMWViNEtJUW5SYWIwdk0wZnV3a0p1V24tVEFKS1d3T1ltQVRRZjJRNVV3MmdWUjF3?oc=5",
+    "apply": "",
+    "email": "",
+    "phone": "",
+    "date": "2026-09-30",
+    "deadline": "",
+    "method": "仅供发现线索，不代表已核实招聘资格或报名入口；请从原公告寻找正式投递渠道",
+    "source_type": "RSS自动检索·未经人工核验",
+    "discovery_evidence": {
+      "math_in_snippet": false,
+      "city_in_snippet": true,
+      "publication_date_known": true
+    },
+    "origin": "rss",
+    "verified_at": "",
+    "first_seen": "2026-10-21T09:25:46+00:00",
+    "last_seen": "2026-10-21T09:25:46+00:00"
+  },
+  {
     "id": "rss-3ac7455b55ca1d40c1",
     "school": "浦东新区公办学校2027年教师招聘（第一批次）报名公告 - 凤凰网",
     "city": "上海",
@@ -27,7 +87,7 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-18T05:45:33+00:00",
-    "last_seen": "2026-10-20T09:30:12+00:00"
+    "last_seen": "2026-10-21T09:25:46+00:00"
   },
   {
     "id": "rss-59eabe051bbc51c443",
@@ -87,7 +147,7 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-18T05:45:33+00:00",
-    "last_seen": "2026-10-20T09:30:12+00:00"
+    "last_seen": "2026-10-21T09:25:46+00:00"
   },
   {
     "id": "rss-dba496ab93527ce905",
@@ -117,7 +177,7 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-18T05:45:33+00:00",
-    "last_seen": "2026-10-20T09:30:12+00:00"
+    "last_seen": "2026-10-21T09:25:46+00:00"
   },
   {
     "id": "rss-6c7ffef96c40120c3e",
