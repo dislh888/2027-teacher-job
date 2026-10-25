@@ -1,5 +1,35 @@
 [
   {
+    "id": "rss-433deec4166016bbf4",
+    "school": "浦东新区公办学校2027年教师招聘（第一批次）报名公告 - 凤凰网",
+    "city": "上海",
+    "district": "待核实",
+    "sector": "待核实",
+    "stage": "待核实",
+    "role": "教师招聘公告（是否含数学岗位待核实）",
+    "places": "未公布",
+    "fit": "D",
+    "license": "尚未核验：请确认2027届身份、专业、教资取得时点及学历要求",
+    "note": "自动检索摘要：浦东新区公办学校2027年教师招聘（第一批次）报名公告 凤凰网",
+    "source": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5YQU9XNzdtSjF5YUtHR0tUVUdaY0x5ZGdTS1hCcmEzUzktR1NqRHMwSXVSNnRTbFpTR3dJSlI0YldzQW1ZYzFLUHpkLXQ?oc=5",
+    "apply": "",
+    "email": "",
+    "phone": "",
+    "date": "2026-10-16",
+    "deadline": "",
+    "method": "仅供发现线索，不代表已核实招聘资格或报名入口；请从原公告寻找正式投递渠道",
+    "source_type": "RSS自动检索·未经人工核验",
+    "discovery_evidence": {
+      "math_in_snippet": false,
+      "city_in_snippet": true,
+      "publication_date_known": true
+    },
+    "origin": "rss",
+    "verified_at": "",
+    "first_seen": "2026-10-25T09:13:25+00:00",
+    "last_seen": "2026-10-25T09:13:25+00:00"
+  },
+  {
     "id": "rss-81911f811519e35498",
     "school": "【招聘动态】教师教辅多个岗位！上海科技大学附属学校2026年秋季教师招聘 - 新浪财经",
     "city": "上海",
@@ -27,7 +57,7 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-24T08:56:32+00:00",
-    "last_seen": "2026-10-24T08:56:32+00:00"
+    "last_seen": "2026-10-25T09:13:25+00:00"
   },
   {
     "id": "rss-9ecf1c06882d82cb31",
@@ -147,7 +177,7 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-18T05:45:33+00:00",
-    "last_seen": "2026-10-19T10:01:53+00:00"
+    "last_seen": "2026-10-25T09:13:25+00:00"
   },
   {
     "id": "rss-f52c20af828f8c5531",
@@ -177,7 +207,7 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-18T05:45:33+00:00",
-    "last_seen": "2026-10-24T08:56:32+00:00"
+    "last_seen": "2026-10-25T09:13:25+00:00"
   },
   {
     "id": "rss-dba496ab93527ce905",
@@ -207,7 +237,7 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-18T05:45:33+00:00",
-    "last_seen": "2026-10-24T08:56:32+00:00"
+    "last_seen": "2026-10-25T09:13:25+00:00"
   },
   {
     "id": "rss-6c7ffef96c40120c3e",
@@ -237,6 +267,6 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-18T05:45:33+00:00",
-    "last_seen": "2026-10-24T08:56:32+00:00"
+    "last_seen": "2026-10-25T09:13:25+00:00"
   }
 ]

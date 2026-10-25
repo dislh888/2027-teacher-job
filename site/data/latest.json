@@ -1,37 +1,26 @@
 {
   "status": {
-    "last_run": "2026-10-24T08:56:32+00:00",
-    "last_successful_search": "2026-10-24T08:56:32+00:00",
+    "last_run": "2026-10-25T09:13:25+00:00",
+    "last_successful_search": "2026-10-25T09:13:25+00:00",
     "successful_feeds": 32,
     "failed_feeds": 0,
     "new_candidates": 1,
-    "total_candidates": 8,
-    "raw_search_hits": 523,
-    "relevant_hits": 5,
+    "total_candidates": 9,
+    "raw_search_hits": 463,
+    "relevant_hits": 7,
     "rejection_counts": {
-      "missing_city": 196,
-      "older_than_180_days": 228,
-      "not_job_notice": 34,
-      "missing_math_or_teacher_notice": 11,
-      "missing_recruitment": 47,
-      "missing_school": 2
+      "missing_recruitment": 92,
+      "missing_city": 137,
+      "not_job_notice": 33,
+      "missing_math_or_teacher_notice": 10,
+      "older_than_180_days": 179,
+      "missing_school": 4,
+      "short_title": 1
     },
     "duplicate_hits": 1,
     "curated_duplicate_hits": 0,
     "empty_feeds": 6,
     "feeds": [
-      {
-        "engine": "bing",
-        "city": "上海",
-        "url": "https://www.bing.com/search?format=rss&q=%E4%B8%8A%E6%B5%B7%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
-        "hits": 10
-      },
-      {
-        "engine": "bing",
-        "city": "上海",
-        "url": "https://www.bing.com/search?format=rss&q=%E4%B8%8A%E6%B5%B7%202027%E5%B1%8A%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
-        "hits": 10
-      },
       {
         "engine": "bing",
         "city": "上海",
@@ -47,7 +36,13 @@
       {
         "engine": "bing",
         "city": "上海",
-        "url": "https://www.bing.com/search?format=rss&q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%20site%3Aedu.sh.gov.cn",
+        "url": "https://www.bing.com/search?format=rss&q=%E4%B8%8A%E6%B5%B7%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
+        "hits": 10
+      },
+      {
+        "engine": "bing",
+        "city": "上海",
+        "url": "https://www.bing.com/search?format=rss&q=%E4%B8%8A%E6%B5%B7%202027%E5%B1%8A%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
         "hits": 10
       },
       {
@@ -59,14 +54,20 @@
       {
         "engine": "google_news",
         "city": "上海",
-        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%20%E6%A0%A1%E5%9B%AD%E6%8B%9B%E8%81%98%20%E5%88%9D%E4%B8%AD%20%E9%AB%98%E4%B8%AD&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 8
+        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%202027%E5%B1%8A%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
+        "hits": 7
       },
       {
         "engine": "google_news",
         "city": "上海",
-        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%202027%E5%B1%8A%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 6
+        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%20%E6%A0%A1%E5%9B%AD%E6%8B%9B%E8%81%98%20%E5%88%9D%E4%B8%AD%20%E9%AB%98%E4%B8%AD&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
+        "hits": 8
+      },
+      {
+        "engine": "bing",
+        "city": "上海",
+        "url": "https://www.bing.com/search?format=rss&q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%20site%3Aedu.sh.gov.cn",
+        "hits": 10
       },
       {
         "engine": "google_news",
@@ -77,14 +78,20 @@
       {
         "engine": "google_news",
         "city": "上海",
+        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%20%E6%95%99%E5%B8%88%E6%8B%9B%E8%81%98%20%E5%85%AC%E5%91%8A&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
+        "hits": 67
+      },
+      {
+        "engine": "google_news",
+        "city": "上海",
         "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E4%B8%AD%E8%81%8C%20%E9%AB%98%E8%81%8C%20%E4%B8%93%E4%BB%BB%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
         "hits": 0
       },
       {
         "engine": "google_news",
         "city": "上海",
-        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%20%E6%95%99%E5%B8%88%E6%8B%9B%E8%81%98%20%E5%85%AC%E5%91%8A&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 65
+        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%20site%3Aedu.sh.gov.cn&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
+        "hits": 5
       },
       {
         "engine": "bing",
@@ -99,18 +106,6 @@
         "hits": 10
       },
       {
-        "engine": "google_news",
-        "city": "上海",
-        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%20site%3Aedu.sh.gov.cn&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 5
-      },
-      {
-        "engine": "bing",
-        "city": "合肥",
-        "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
-        "hits": 10
-      },
-      {
         "engine": "bing",
         "city": "合肥",
         "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%20%E6%95%99%E5%B8%88%E6%8B%9B%E8%81%98%20%E5%85%AC%E5%91%8A",
@@ -119,7 +114,7 @@
       {
         "engine": "bing",
         "city": "合肥",
-        "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%202027%E5%B1%8A%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
+        "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
         "hits": 10
       },
       {
@@ -129,16 +124,22 @@
         "hits": 0
       },
       {
-        "engine": "google_news",
+        "engine": "bing",
         "city": "合肥",
-        "url": "https://news.google.com/rss/search?q=%E5%90%88%E8%82%A5%20%E6%95%99%E5%B8%88%E6%8B%9B%E8%81%98%20%E5%85%AC%E5%91%8A&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 3
+        "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%202027%E5%B1%8A%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
+        "hits": 9
       },
       {
         "engine": "bing",
         "city": "合肥",
         "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%20%E6%A0%A1%E5%9B%AD%E6%8B%9B%E8%81%98%20%E5%88%9D%E4%B8%AD%20%E9%AB%98%E4%B8%AD",
         "hits": 10
+      },
+      {
+        "engine": "google_news",
+        "city": "上海",
+        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%202027%20site%3Agov.cn&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
+        "hits": 37
       },
       {
         "engine": "bing",
@@ -153,16 +154,22 @@
         "hits": 0
       },
       {
-        "engine": "bing",
+        "engine": "google_news",
         "city": "合肥",
-        "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%202027%20site%3Agov.cn",
-        "hits": 10
+        "url": "https://news.google.com/rss/search?q=%E5%90%88%E8%82%A5%20%E6%95%99%E5%B8%88%E6%8B%9B%E8%81%98%20%E5%85%AC%E5%91%8A&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
+        "hits": 2
       },
       {
         "engine": "google_news",
         "city": "合肥",
         "url": "https://news.google.com/rss/search?q=%E5%90%88%E8%82%A5%202027%E5%B1%8A%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
         "hits": 0
+      },
+      {
+        "engine": "bing",
+        "city": "合肥",
+        "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%202027%20site%3Agov.cn",
+        "hits": 10
       },
       {
         "engine": "google_news",
@@ -177,22 +184,16 @@
         "hits": 10
       },
       {
-        "engine": "google_news",
-        "city": "合肥",
-        "url": "https://news.google.com/rss/search?q=%E5%90%88%E8%82%A5%202027%20%E6%95%B0%E5%AD%A6%20%E4%B8%AD%E8%81%8C%20%E9%AB%98%E8%81%8C%20%E4%B8%93%E4%BB%BB%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 0
-      },
-      {
-        "engine": "google_news",
-        "city": "上海",
-        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%202027%20site%3Agov.cn&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 100
-      },
-      {
         "engine": "bing",
         "city": "合肥",
         "url": "https://www.bing.com/search?format=rss&q=%E5%AE%89%E5%BE%BD%E5%90%88%E8%82%A5%202027%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20site%3Aedu.cn",
         "hits": 10
+      },
+      {
+        "engine": "google_news",
+        "city": "合肥",
+        "url": "https://news.google.com/rss/search?q=%E5%90%88%E8%82%A5%202027%20%E6%95%B0%E5%AD%A6%20%E4%B8%AD%E8%81%8C%20%E9%AB%98%E8%81%8C%20%E4%B8%93%E4%BB%BB%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
+        "hits": 0
       },
       {
         "engine": "google_news",
@@ -204,7 +205,7 @@
         "engine": "google_news",
         "city": "合肥",
         "url": "https://news.google.com/rss/search?q=%E5%90%88%E8%82%A5%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%202027%20site%3Agov.cn&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 38
+        "hits": 40
       },
       {
         "engine": "google_news",
@@ -979,6 +980,36 @@
       "origin": "curated"
     },
     {
+      "id": "rss-433deec4166016bbf4",
+      "school": "浦东新区公办学校2027年教师招聘（第一批次）报名公告 - 凤凰网",
+      "city": "上海",
+      "district": "待核实",
+      "sector": "待核实",
+      "stage": "待核实",
+      "role": "教师招聘公告（是否含数学岗位待核实）",
+      "places": "未公布",
+      "fit": "D",
+      "license": "尚未核验：请确认2027届身份、专业、教资取得时点及学历要求",
+      "note": "自动检索摘要：浦东新区公办学校2027年教师招聘（第一批次）报名公告 凤凰网",
+      "source": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5YQU9XNzdtSjF5YUtHR0tUVUdaY0x5ZGdTS1hCcmEzUzktR1NqRHMwSXVSNnRTbFpTR3dJSlI0YldzQW1ZYzFLUHpkLXQ?oc=5",
+      "apply": "",
+      "email": "",
+      "phone": "",
+      "date": "2026-10-16",
+      "deadline": "",
+      "method": "仅供发现线索，不代表已核实招聘资格或报名入口；请从原公告寻找正式投递渠道",
+      "source_type": "RSS自动检索·未经人工核验",
+      "discovery_evidence": {
+        "math_in_snippet": false,
+        "city_in_snippet": true,
+        "publication_date_known": true
+      },
+      "origin": "rss",
+      "verified_at": "",
+      "first_seen": "2026-10-25T09:13:25+00:00",
+      "last_seen": "2026-10-25T09:13:25+00:00"
+    },
+    {
       "id": "rss-81911f811519e35498",
       "school": "【招聘动态】教师教辅多个岗位！上海科技大学附属学校2026年秋季教师招聘 - 新浪财经",
       "city": "上海",
@@ -1006,7 +1037,7 @@
       "origin": "rss",
       "verified_at": "",
       "first_seen": "2026-10-24T08:56:32+00:00",
-      "last_seen": "2026-10-24T08:56:32+00:00"
+      "last_seen": "2026-10-25T09:13:25+00:00"
     },
     {
       "id": "rss-9ecf1c06882d82cb31",
@@ -1126,7 +1157,7 @@
       "origin": "rss",
       "verified_at": "",
       "first_seen": "2026-10-18T05:45:33+00:00",
-      "last_seen": "2026-10-19T10:01:53+00:00"
+      "last_seen": "2026-10-25T09:13:25+00:00"
     },
     {
       "id": "rss-f52c20af828f8c5531",
@@ -1156,7 +1187,7 @@
       "origin": "rss",
       "verified_at": "",
       "first_seen": "2026-10-18T05:45:33+00:00",
-      "last_seen": "2026-10-24T08:56:32+00:00"
+      "last_seen": "2026-10-25T09:13:25+00:00"
     },
     {
       "id": "rss-dba496ab93527ce905",
@@ -1186,7 +1217,7 @@
       "origin": "rss",
       "verified_at": "",
       "first_seen": "2026-10-18T05:45:33+00:00",
-      "last_seen": "2026-10-24T08:56:32+00:00"
+      "last_seen": "2026-10-25T09:13:25+00:00"
     },
     {
       "id": "rss-6c7ffef96c40120c3e",
@@ -1216,7 +1247,7 @@
       "origin": "rss",
       "verified_at": "",
       "first_seen": "2026-10-18T05:45:33+00:00",
-      "last_seen": "2026-10-24T08:56:32+00:00"
+      "last_seen": "2026-10-25T09:13:25+00:00"
     }
   ]
 }
