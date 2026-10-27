@@ -1,31 +1,26 @@
 {
   "status": {
-    "last_run": "2026-10-26T10:16:13+00:00",
-    "last_successful_search": "2026-10-26T10:16:13+00:00",
+    "last_run": "2026-10-27T09:53:17+00:00",
+    "last_successful_search": "2026-10-27T09:53:17+00:00",
     "successful_feeds": 32,
     "failed_feeds": 0,
     "new_candidates": 0,
     "total_candidates": 9,
-    "raw_search_hits": 489,
-    "relevant_hits": 7,
+    "raw_search_hits": 443,
+    "relevant_hits": 6,
     "rejection_counts": {
-      "missing_recruitment": 104,
-      "missing_city": 135,
-      "not_job_notice": 29,
-      "older_than_180_days": 201,
-      "missing_math_or_teacher_notice": 12,
-      "missing_school": 1
+      "missing_recruitment": 143,
+      "missing_city": 96,
+      "older_than_180_days": 141,
+      "missing_math_or_teacher_notice": 15,
+      "not_job_notice": 33,
+      "short_title": 6,
+      "missing_school": 3
     },
-    "duplicate_hits": 1,
+    "duplicate_hits": 0,
     "curated_duplicate_hits": 0,
-    "empty_feeds": 5,
+    "empty_feeds": 4,
     "feeds": [
-      {
-        "engine": "bing",
-        "city": "上海",
-        "url": "https://www.bing.com/search?format=rss&q=%E4%B8%8A%E6%B5%B7%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
-        "hits": 10
-      },
       {
         "engine": "bing",
         "city": "上海",
@@ -45,10 +40,16 @@
         "hits": 10
       },
       {
+        "engine": "bing",
+        "city": "上海",
+        "url": "https://www.bing.com/search?format=rss&q=%E4%B8%8A%E6%B5%B7%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
+        "hits": 10
+      },
+      {
         "engine": "google_news",
         "city": "上海",
-        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%20%E6%A0%A1%E5%9B%AD%E6%8B%9B%E8%81%98%20%E5%88%9D%E4%B8%AD%20%E9%AB%98%E4%B8%AD&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 8
+        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
+        "hits": 9
       },
       {
         "engine": "google_news",
@@ -59,37 +60,25 @@
       {
         "engine": "bing",
         "city": "上海",
-        "url": "https://www.bing.com/search?format=rss&q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E4%B8%AD%E8%81%8C%20%E9%AB%98%E8%81%8C%20%E4%B8%93%E4%BB%BB%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
-        "hits": 10
-      },
-      {
-        "engine": "bing",
-        "city": "上海",
         "url": "https://www.bing.com/search?format=rss&q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%20site%3Aedu.sh.gov.cn",
         "hits": 10
       },
       {
         "engine": "google_news",
         "city": "上海",
-        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 37
-      },
-      {
-        "engine": "google_news",
-        "city": "上海",
         "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%20%E6%95%99%E5%B8%88%E6%8B%9B%E8%81%98%20%E5%85%AC%E5%91%8A&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 62
-      },
-      {
-        "engine": "google_news",
-        "city": "上海",
-        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%20site%3Aedu.sh.gov.cn&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 7
+        "hits": 65
       },
       {
         "engine": "bing",
         "city": "上海",
-        "url": "https://www.bing.com/search?format=rss&q=%E6%B5%A6%E4%B8%9C%20%E5%AE%9D%E5%B1%B1%20%E9%97%B5%E8%A1%8C%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%E6%8B%9B%E8%81%98",
+        "url": "https://www.bing.com/search?format=rss&q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E4%B8%AD%E8%81%8C%20%E9%AB%98%E8%81%8C%20%E4%B8%93%E4%BB%BB%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
+        "hits": 10
+      },
+      {
+        "engine": "google_news",
+        "city": "上海",
+        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%20%E6%A0%A1%E5%9B%AD%E6%8B%9B%E8%81%98%20%E5%88%9D%E4%B8%AD%20%E9%AB%98%E4%B8%AD&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
         "hits": 10
       },
       {
@@ -105,6 +94,18 @@
         "hits": 0
       },
       {
+        "engine": "google_news",
+        "city": "上海",
+        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%20site%3Aedu.sh.gov.cn&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
+        "hits": 8
+      },
+      {
+        "engine": "bing",
+        "city": "合肥",
+        "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
+        "hits": 10
+      },
+      {
         "engine": "bing",
         "city": "合肥",
         "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%20%E6%95%99%E5%B8%88%E6%8B%9B%E8%81%98%20%E5%85%AC%E5%91%8A",
@@ -118,14 +119,14 @@
       },
       {
         "engine": "bing",
-        "city": "合肥",
-        "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%202027%E5%B1%8A%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
+        "city": "上海",
+        "url": "https://www.bing.com/search?format=rss&q=%E6%B5%A6%E4%B8%9C%20%E5%AE%9D%E5%B1%B1%20%E9%97%B5%E8%A1%8C%202027%20%E6%95%B0%E5%AD%A6%20%E6%95%99%E5%B8%88%E6%8B%9B%E8%81%98",
         "hits": 10
       },
       {
         "engine": "bing",
         "city": "合肥",
-        "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
+        "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%202027%E5%B1%8A%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
         "hits": 10
       },
       {
@@ -136,14 +137,14 @@
       },
       {
         "engine": "google_news",
-        "city": "合肥",
-        "url": "https://news.google.com/rss/search?q=%E5%90%88%E8%82%A5%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 0
+        "city": "上海",
+        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%202027%20site%3Agov.cn&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
+        "hits": 38
       },
       {
         "engine": "google_news",
         "city": "合肥",
-        "url": "https://news.google.com/rss/search?q=%E5%90%88%E8%82%A5%202027%E5%B1%8A%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
+        "url": "https://news.google.com/rss/search?q=%E5%90%88%E8%82%A5%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
         "hits": 1
       },
       {
@@ -155,7 +156,25 @@
       {
         "engine": "bing",
         "city": "合肥",
+        "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%202027%20site%3Agov.cn",
+        "hits": 10
+      },
+      {
+        "engine": "google_news",
+        "city": "合肥",
+        "url": "https://news.google.com/rss/search?q=%E5%90%88%E8%82%A5%202027%E5%B1%8A%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
+        "hits": 1
+      },
+      {
+        "engine": "bing",
+        "city": "合肥",
         "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%202027%20%E6%95%B0%E5%AD%A6%20%E4%B8%AD%E8%81%8C%20%E9%AB%98%E8%81%8C%20%E4%B8%93%E4%BB%BB%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
+        "hits": 10
+      },
+      {
+        "engine": "bing",
+        "city": "合肥",
+        "url": "https://www.bing.com/search?format=rss&q=%E8%82%A5%E8%A5%BF%20%E8%82%A5%E4%B8%9C%20%E9%95%BF%E4%B8%B0%202027%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
         "hits": 10
       },
       {
@@ -166,27 +185,9 @@
       },
       {
         "engine": "google_news",
-        "city": "上海",
-        "url": "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%202027%20site%3Agov.cn&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 100
-      },
-      {
-        "engine": "google_news",
         "city": "合肥",
         "url": "https://news.google.com/rss/search?q=%E5%90%88%E8%82%A5%202027%20%E6%95%B0%E5%AD%A6%20%E4%B8%AD%E8%81%8C%20%E9%AB%98%E8%81%8C%20%E4%B8%93%E4%BB%BB%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
         "hits": 0
-      },
-      {
-        "engine": "bing",
-        "city": "合肥",
-        "url": "https://www.bing.com/search?format=rss&q=%E5%90%88%E8%82%A5%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%202027%20site%3Agov.cn",
-        "hits": 10
-      },
-      {
-        "engine": "bing",
-        "city": "合肥",
-        "url": "https://www.bing.com/search?format=rss&q=%E8%82%A5%E8%A5%BF%20%E8%82%A5%E4%B8%9C%20%E9%95%BF%E4%B8%B0%202027%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20%E6%8B%9B%E8%81%98",
-        "hits": 10
       },
       {
         "engine": "bing",
@@ -198,7 +199,7 @@
         "engine": "google_news",
         "city": "合肥",
         "url": "https://news.google.com/rss/search?q=%E5%90%88%E8%82%A5%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%202027%20site%3Agov.cn&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 35
+        "hits": 38
       },
       {
         "engine": "google_news",
@@ -210,7 +211,7 @@
         "engine": "google_news",
         "city": "合肥",
         "url": "https://news.google.com/rss/search?q=%E5%AE%89%E5%BE%BD%E5%90%88%E8%82%A5%202027%20%E6%95%B0%E5%AD%A6%E6%95%99%E5%B8%88%20site%3Aedu.cn&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
-        "hits": 66
+        "hits": 100
       }
     ],
     "discovery_health": "leads_found",
@@ -1006,7 +1007,7 @@
       "origin": "rss",
       "verified_at": "",
       "first_seen": "2026-10-25T09:13:25+00:00",
-      "last_seen": "2026-10-26T10:16:13+00:00"
+      "last_seen": "2026-10-27T09:53:17+00:00"
     },
     {
       "id": "rss-81911f811519e35498",
@@ -1036,7 +1037,7 @@
       "origin": "rss",
       "verified_at": "",
       "first_seen": "2026-10-24T08:56:32+00:00",
-      "last_seen": "2026-10-26T10:16:13+00:00"
+      "last_seen": "2026-10-27T09:53:17+00:00"
     },
     {
       "id": "rss-9ecf1c06882d82cb31",
@@ -1096,7 +1097,7 @@
       "origin": "rss",
       "verified_at": "",
       "first_seen": "2026-10-21T09:25:46+00:00",
-      "last_seen": "2026-10-22T09:28:53+00:00"
+      "last_seen": "2026-10-27T09:53:17+00:00"
     },
     {
       "id": "rss-3ac7455b55ca1d40c1",
@@ -1156,7 +1157,7 @@
       "origin": "rss",
       "verified_at": "",
       "first_seen": "2026-10-18T05:45:33+00:00",
-      "last_seen": "2026-10-26T10:16:13+00:00"
+      "last_seen": "2026-10-27T09:53:17+00:00"
     },
     {
       "id": "rss-f52c20af828f8c5531",
@@ -1186,7 +1187,7 @@
       "origin": "rss",
       "verified_at": "",
       "first_seen": "2026-10-18T05:45:33+00:00",
-      "last_seen": "2026-10-26T10:16:13+00:00"
+      "last_seen": "2026-10-27T09:53:17+00:00"
     },
     {
       "id": "rss-dba496ab93527ce905",
@@ -1216,7 +1217,7 @@
       "origin": "rss",
       "verified_at": "",
       "first_seen": "2026-10-18T05:45:33+00:00",
-      "last_seen": "2026-10-26T10:16:13+00:00"
+      "last_seen": "2026-10-27T09:53:17+00:00"
     },
     {
       "id": "rss-6c7ffef96c40120c3e",
