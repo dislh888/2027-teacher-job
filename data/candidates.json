@@ -1,5 +1,35 @@
 [
   {
+    "id": "rss-a59100504fa77f275d",
+    "school": "2027年宝山区教师招聘（第一期）10月26日起报名（附岗位表） - 凤凰网",
+    "city": "上海",
+    "district": "待核实",
+    "sector": "待核实",
+    "stage": "待核实",
+    "role": "教师招聘公告（是否含数学岗位待核实）",
+    "places": "未公布",
+    "fit": "D",
+    "license": "尚未核验：请确认2027届身份、专业、教资取得时点及学历要求",
+    "note": "自动检索摘要：2027年宝山区教师招聘（第一期）10月26日起报名（附岗位表） 凤凰网",
+    "source": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1RTjlpNnltUFJXNW9RM2xlS215Mm52ZzA3RjY0N0ptZ3p2b1FpdDZIVVByUzViNnRZeDFydGhLbENiZnNaaXhucGE0TU8?oc=5",
+    "apply": "",
+    "email": "",
+    "phone": "",
+    "date": "2026-10-22",
+    "deadline": "",
+    "method": "仅供发现线索，不代表已核实招聘资格或报名入口；请从原公告寻找正式投递渠道",
+    "source_type": "RSS自动检索·未经人工核验",
+    "discovery_evidence": {
+      "math_in_snippet": false,
+      "city_in_snippet": true,
+      "publication_date_known": true
+    },
+    "origin": "rss",
+    "verified_at": "",
+    "first_seen": "2026-10-30T10:55:26+00:00",
+    "last_seen": "2026-10-30T10:55:26+00:00"
+  },
+  {
     "id": "rss-579be09dd4ae78d8a0",
     "school": "上海市奉贤中学2027学年教师招聘公告_招聘信息公告 - 上海市奉贤区人民政府",
     "city": "上海",
@@ -27,7 +57,7 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-29T10:57:17+00:00",
-    "last_seen": "2026-10-29T10:57:17+00:00"
+    "last_seen": "2026-10-30T10:55:26+00:00"
   },
   {
     "id": "rss-433deec4166016bbf4",
@@ -87,7 +117,7 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-24T08:56:32+00:00",
-    "last_seen": "2026-10-29T10:57:17+00:00"
+    "last_seen": "2026-10-30T10:55:26+00:00"
   },
   {
     "id": "rss-9ecf1c06882d82cb31",
@@ -207,7 +237,7 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-18T05:45:33+00:00",
-    "last_seen": "2026-10-29T10:57:17+00:00"
+    "last_seen": "2026-10-30T10:55:26+00:00"
   },
   {
     "id": "rss-f52c20af828f8c5531",
@@ -237,7 +267,7 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-18T05:45:33+00:00",
-    "last_seen": "2026-10-29T10:57:17+00:00"
+    "last_seen": "2026-10-30T10:55:26+00:00"
   },
   {
     "id": "rss-dba496ab93527ce905",
@@ -297,6 +327,6 @@
     "origin": "rss",
     "verified_at": "",
     "first_seen": "2026-10-18T05:45:33+00:00",
-    "last_seen": "2026-10-26T10:16:13+00:00"
+    "last_seen": "2026-10-30T10:55:26+00:00"
   }
 ]
